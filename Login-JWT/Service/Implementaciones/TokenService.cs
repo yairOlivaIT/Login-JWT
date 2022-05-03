@@ -7,6 +7,7 @@ using System.Text;
 
 namespace Login_JWT.Service.Implementaciones
 {
+    /*Ampliamos la interfaz de Itokenservice e implementamos sus métodos*/
     public class TokenService : ITokenService
     {
         private const double EXPIRY_DURATION_MINUTES = 30;

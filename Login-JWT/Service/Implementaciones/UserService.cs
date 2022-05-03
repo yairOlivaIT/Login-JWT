@@ -4,6 +4,13 @@ using System.Linq;
 
 namespace Login_JWT.Service.Implementaciones
 {
+    /*Amplía la IUserService interfaz e implementa el GetUsermétodo.
+     *También contiene los datos de muestra utilizados por la aplicación como una lista de la UserDTOclase.*/
+    /* La aplicación aprovecha la instancia del repositorio para realizar operaciones CRUD 
+     * en la base de datos. En este ejemplo, el HomeController interactúa con el UserService 
+     * para recuperar un usuario basado en el nombre de usuario y la contraseña.*/
+    /* La UserService clase extiende la IUserService interfaz e implementa el GetUser método,
+     * También construye una lista de UserDTO objetos.*/
     public class UserService : IUserService
     {
         private readonly List<UserDTO> users = new List<UserDTO>();

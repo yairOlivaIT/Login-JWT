@@ -27,10 +27,15 @@ namespace Login_JWT
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+
+        /*En el ConfigureService smétodo de la Startup clase,
+         *debo mencionar que usará la AddAuthentication función además JwtBearerdel AddJwtBearer método,
+         *como se muestra en el fragmento de código a continuación.*/
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSession();
             services.AddControllersWithViews();
+            //agregamos un servicio transitorio de tipo
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ITokenService, TokenService>();
             services.AddAuthentication(auth =>
@@ -54,6 +59,7 @@ namespace Login_JWT
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // Puede especificar el estado de la sesión, la autenticación y el enrutamiento que se usarán.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -67,7 +73,12 @@ namespace Login_JWT
                 app.UseHsts();
             }
 
+
+            /*Aprovechará el estado de la sesión en este ejemplo para almacenar el token generado.
+             *Debe realizar una llamada al UseSession método de extensión en el Configure método de la Startup 
+             *clase para habilitar el estado de sesión para su aplicación*/
             app.UseSession();
+            
             app.Use(async (context, next) =>
             {
                var token = context.Session.GetString("Token");

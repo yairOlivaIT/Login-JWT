@@ -1,5 +1,6 @@
 ﻿namespace Login_JWT.Models
 {
+    /*El UserDTO representa el objeto de transferencia de datos del usuario */
     public class UserDTO
     {
         public string Username { get; set; }

@@ -9,12 +9,18 @@ using System.Linq;
 
 namespace JWTASPNetCore.Controllers
 {
+    /* En la HomeController clase, aprovechará la inserción de dependencias para poder usar instancias
+     * de las clases Configuration, TokenService y UserService. Cree las siguientes instancias de solo
+     * lectura para cada una de las tres interfaces*/
     public class HomeController : Controller
     {
         private readonly IConfiguration _config;
         private readonly IUserService _userRepository;
         private readonly ITokenService _tokenService;
         private string generatedToken = null;
+
+        /*Así es como se usa la inyección de constructor en la HomeController clase
+         *para cada una de las instancias discutidas anteriormente.*/
         public HomeController(IConfiguration config, ITokenService tokenService, IUserService userRepository)
         {
             _config = config;
@@ -61,6 +67,9 @@ namespace JWTASPNetCore.Controllers
                 return (RedirectToAction("Error"));
             }
         }
+        /*El GetUser método de la HomeController clase llama al GetUser método de la UserService
+         *clase para recuperar una instancia de la UserDTO clase en función de las credenciales de 
+         *usuario ingresadas en la pantalla de inicio de sesión.*/
         private UserDTO GetUser(UserModel userModel)
         {
             //Write your code here to authenticate the user
@@ -94,6 +103,8 @@ namespace JWTASPNetCore.Controllers
             ViewBag.Message = "Credenciales inválidas...";
             return View();
         }
+
+        /* El BuildMessage método se utiliza para dividir el token generado en varias líneas. */
         private string BuildMessage(string stringToSplit, int chunkSize)
         {
             var data = Enumerable.Range(0, stringToSplit.Length / chunkSize)
