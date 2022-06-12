@@ -17,10 +17,10 @@ namespace Login_JWT.Service.Implementaciones
 
         public UserService()
         {
-            users.Add(new UserDTO { Username = "Alberto", Password = "123", Role = "manager" });
-            users.Add(new UserDTO { Username = "Federico", Password = "456", Role = "admin" });
-            users.Add(new UserDTO { Username = "Lucas", Password = "789", Role = "developer" });
-            users.Add(new UserDTO { Username = "Maximiliano", Password = "012", Role = "tester" });
+            users.Add(new UserDTO { Username = "Julian", Password = "123", Role = "manager" });
+            users.Add(new UserDTO { Username = "Diego", Password = "456", Role = "admin" });
+            users.Add(new UserDTO { Username = "Marcelo", Password = "789", Role = "developer" });
+            users.Add(new UserDTO { Username = "Matias", Password = "012", Role = "tester" });
 
         }
         public UserDTO GetUser(UserModel userModel)
