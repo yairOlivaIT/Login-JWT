@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OJ+5j0zpq2YOwbUIbdK69I1Z7i1YQzHsBZdCZP5qGMvUEHn8P6aXviarGcYDbQyWBm17H89bBc/ER/Tm50QbBg==",
+  "dgSpecHash": "WKUh1hIYAToeiwTY0P8Tccw6Vig6/iLoqk9r+X5ti7GnNdooKgZmVv+6cO/Psj24wcmJt7grIx1qGEbf1xQzMQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yair\\source\\repos\\2022\\JsonWebToken-Login\\Login-JWT\\Login-JWT.csproj",
+  "projectFilePath": "C:\\Users\\yair\\source\\repos\\2022\\prueba-login\\Login-JWT\\Login-JWT\\Login-JWT.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yair\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\yair\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

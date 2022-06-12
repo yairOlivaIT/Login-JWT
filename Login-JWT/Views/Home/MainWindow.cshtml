@@ -1,13 +1,16 @@
-﻿<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>CodeMag JWT Demo</title>
-</head>
+﻿@{
+  ViewBag.Title = "Demonstrating JWTs in ASP.NET Core MVC 5";
+}
+<div>
+    <li style="list-style:none">
+        <a style="text-decoration:none">@Html.ActionLink("Cerrar Sesion","Logout","Home")</a>
+    </li>
+</div>
 
-<body>
-  @{
-      ViewBag.Title = "Demonstrating JWTs in ASP.NET Core MVC 5";
-  }
-  <p>@ViewBag.Message</p>
-</body>
-</html>
+<div class="col-8" style="display: flex; align-items:center; justify-content:center;margin: 0 auto;flex-direction:column">
+    <h3>Bienvenido/a a WEB 3</h3>
+    <img src="https://static.vecteezy.com/system/resources/previews/005/163/928/non_2x/account-has-been-registered-login-success-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-vector.jpg" width="200" height="200"/>
+    <p class="mt-5"><span style="font-size:16px;font-weight:500;">Token Generado </span> @ViewBag.Message</p>
+</div>
+
+

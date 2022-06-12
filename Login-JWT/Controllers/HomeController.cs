@@ -104,13 +104,19 @@ namespace JWTASPNetCore.Controllers
             return View();
         }
 
+        public ActionResult LogOut()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
+        }
+
         /* El BuildMessage método se utiliza para dividir el token generado en varias líneas. */
         private string BuildMessage(string stringToSplit, int chunkSize)
         {
             var data = Enumerable.Range(0, stringToSplit.Length / chunkSize)
                 .Select(i => stringToSplit.Substring(i * chunkSize, chunkSize));
 
-            string result = "Token generado:";
+            string result = ": ";
 
             foreach (string str in data)
             {
